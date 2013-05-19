@@ -1,0 +1,5 @@
+:verbose: true
+:concurrency: 1
+:queues:
+    - [infofree_contact,2]
+:redis: "http://localhost:6379"
