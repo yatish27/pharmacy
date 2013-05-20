@@ -6,7 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activerecord-jdbcmysql-adapter'
-#gem 'jruby-openssl
+gem 'jruby-openssl'
+gem 'json'
 gem 'sinatra','1.3.4', require: false
 gem 'slim','1.3.6'
 gem 'sidekiq'
