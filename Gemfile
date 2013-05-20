@@ -11,14 +11,14 @@ gem 'json'
 gem 'sinatra','1.3.4', require: false
 gem 'slim','1.3.6'
 gem 'sidekiq'
-gem 'activeadmin'
-gem 'sass-rails'
+gem 'activeadmin',:git=>'git@github.com:gregbell/active_admin.git'
+#gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'celerity'
 
 
 group :assets do
- # gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyrhino'
   gem 'uglifier', '>= 1.0.3'
