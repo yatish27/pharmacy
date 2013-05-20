@@ -11,7 +11,7 @@ gem 'json'
 gem 'sinatra','1.3.4', require: false
 gem 'slim','1.3.6'
 gem 'sidekiq'
-gem 'activeadmin',:git=>'git://github.com/gregbell/active_admin.git'
+gem 'activeadmin'
 #gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'celerity'
