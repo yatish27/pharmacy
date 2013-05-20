@@ -14,8 +14,8 @@ class InfoFreeMri
   def login
     @browser = Watir::Browser.new :firefox
     @browser.goto('https://new.infofree.com/login')
-    @browser.text_field(:name,'username').set = USERNAME
-    @browser.text_field(:name,'password').set = PASSWORD
+    @browser.text_field(:name,'username').value = USERNAME
+    @browser.text_field(:name,'password').value = PASSWORD
     @browser.button(:id,'login_submit').click
     puts "Successfully Login"
   end
@@ -27,7 +27,7 @@ class InfoFreeMri
 
   def add_zipcodes(zip)
     sleep(10)
-    @browser.text_field(:name,'search-alias-5932').set = zip
+    @browser.text_field(:name,'search-alias-5932').value = zip
     sleep(1)
     @browser.text_field(:name,'search-alias-5932').fire_event('onkeyup')
     sleep(1)
