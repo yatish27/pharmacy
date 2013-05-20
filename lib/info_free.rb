@@ -112,8 +112,10 @@ class InfoFree
   def run
     login
     goto_consumers_page
+    sleep(1)
     @zip_codes.each do |zip|
       add_zipcodes(zip)
+      sleep(1)
     end
     add_phone_options
     click_final_selection
@@ -140,17 +142,17 @@ class InfoFree
 
           case
           when row[i].match(/^Gender/)
-            output_row[:gender] = row[i].gsub(/Gender/,"")
+            output_row[:gender] = row[i].gsub(/Gender/,"").strip
           when row[i].match(/^Age/)
-            output_row[:age_range] = row[i].gsub(/Age/,"")
+            output_row[:age_range] = row[i].gsub(/Age/,"").strip
           when row[i].match(/^Home Ownership/)
-            output_row[:home_owner] = row[i].gsub(/Home Ownership/,"")
+            output_row[:home_owner] = row[i].gsub(/Home Ownership/,"").strip
           when row[i].match(/^Marital Status/)
-            output_row[:maritial_status] = row[i].gsub(/Marital Status/,"")
+            output_row[:maritial_status] = row[i].gsub(/Marital Status/,"").strip
           when row[i].match(/^home value/)
-            output_row[:house_cost] = row[i].gsub(/home value/,"")
+            output_row[:house_cost] = row[i].gsub(/home value/,"").strip
           when row[i].match(/^Length Of Residence/)
-            output_row[:living_duration] = row[i].gsub(/Length Of Residence/,"")
+            output_row[:living_duration] = row[i].gsub(/Length Of Residence/,"").strip
           end
         end
       end
