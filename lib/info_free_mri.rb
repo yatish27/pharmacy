@@ -28,7 +28,7 @@ class InfoFreeMri
 
   def add_zipcodes(zip)
     sleep(10)
-    @browser.text_field(:name,'search-alias-5932').value = zip
+    @browser.text_field(:name,'search-alias-5932').set zip
     sleep(1)
     @browser.text_field(:name,'search-alias-5932').fire_event('onkeyup')
     sleep(1)
