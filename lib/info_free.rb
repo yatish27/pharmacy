@@ -112,7 +112,7 @@ class InfoFree
   def run
     login
     goto_consumers_page
-    sleep(1)
+    sleep(4)
     @zip_codes.each do |zip|
       add_zipcodes(zip)
       sleep(1)
