@@ -1,6 +1,6 @@
 class InfoFree
 
-  attr_accessor :browser
+  #attr_accessor :browser
 
   USERNAME = 'vincentchhabra@gmail.com'
   PASSWORD = 'Giovanni99'

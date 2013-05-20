@@ -4,7 +4,7 @@ ActiveAdmin.register Contact do
   index do
     selectable_column
     column "Name" do |contact|
-      link_to contact.name, admin_company_path(contact)
+      link_to contact.name, admin_contact_path(contact)
     end
     column :address1
     column :address2
