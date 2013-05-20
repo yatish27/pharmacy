@@ -5,7 +5,7 @@ class InfoFree
   USERNAME = 'vincentchhabra@gmail.com'
   PASSWORD = 'Giovanni99'
 
-  def initialize(zip)
+  def initialize(zip_codes)
     @zip_codes = zip_codes
   end
 
