@@ -3,7 +3,7 @@ require 'watir-webdriver'
 require "watir-webdriver/wait"
 class InfoFreeMri
 
-  #attr_accessor :browser
+  attr_accessor :browser
 
   USERNAME = 'vincentchhabra@gmail.com'
   PASSWORD = 'Giovanni99'
