@@ -28,6 +28,7 @@ class InfoFree
   end
 
   def add_zipcodes(zip)
+    sleep(10)
     @browser.text_field(:name,'search-alias-5932').value = zip
     sleep(1)
     @browser.text_field(:name,'search-alias-5932').fire_event('onkeyup')
