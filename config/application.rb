@@ -53,6 +53,7 @@ module Pharmacy
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
     #config.assets.precompile += %w( *.js *.scss *.css )
+    config.assets.precompile += %w[active_admin.css.scss active_admin.js]
     # Enable the asset pipeline
     config.assets.enabled = true
 
