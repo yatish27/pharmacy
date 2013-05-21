@@ -12,6 +12,22 @@ ActiveAdmin.register Contact do
     default_actions
   end
 
+  csv do
+    column :name
+    column :email
+    column :phone
+    column :address1
+    column :address2
+    column :city
+    column :state
+    column :zip
+    column :age_range
+    column :maritial_status
+    column :home_owner
+    column :house_cost
+    column :living_duration
+  end
+
   filter :age_range, :as => :select, :collection => Contact.select("DISTINCT age_range").collect {|o| [o.age_range, o.age_range]}
   filter :zip, :as => :select, :collection => Contact.select("DISTINCT zip").collect {|o| [o.zip, o.zip]}
   filter :home_owner, :as => :select, :collection => Contact.select("DISTINCT home_owner").collect {|o| [o.home_owner, o.home_owner]}
