@@ -1,6 +1,6 @@
 class InfoFreeWorker
   include Sidekiq::Worker
-  sidekiq_options queue: "infofree_contact", :backtrace => true
+  sidekiq_options queue: "infofree_contact", :backtrace => true, :retry=>false
 
   def perform(id)
     zip = Zipcode.find id
