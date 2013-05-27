@@ -42,11 +42,9 @@ class InfoFreeMri
     @browser.link(:id,'ui-id-4').click
     sleep(1)
     @browser.h3(:id,'if-widget-563-6217-header').click
-    #@browser.checkbox(:name,'checkbox6217').set
     @browser.checkbox(:name,'checkbox6217').fire_event('onclick')
     sleep(3)
     @browser.h3(:id,'if-widget-563-6269-header').click
-    #@browser.checkbox(:name,'checkbox6269').set
     @browser.checkbox(:name,'checkbox6269').fire_event('onclick')
     sleep(3)
     puts "phone number options selected"
@@ -55,6 +53,7 @@ class InfoFreeMri
   def get_base_count
     @browser.span(:class,'baseCount').text
   end
+
   def click_final_selection
     sleep(1)
     b = @browser.buttons(:class,"next")
@@ -77,12 +76,11 @@ class InfoFreeMri
         @browser.table(:id,'contactTable').rows.each do |row|
           file_row << row.text
         end
-        if @browser.tables[7]
-          @browser.tables[7].rows.each do |row|
+        if @browser.tables[6]
+          @browser.tables[6].rows.each do |row|
             file_row << row.text
           end
         end
-        puts file_row
         final_row = clean_row(file_row)
         if final_row
           p final_row
