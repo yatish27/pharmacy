@@ -27,7 +27,7 @@ class InfoFreeMri
   end
 
   def add_zipcodes(zip)
-    sleep(10)
+    sleep(3)
     @browser.h3(:id,'if-widget-566-5932-header').click
     sleep(1)
     @browser.text_field(:name,'search-alias-5932').set zip
@@ -41,11 +41,11 @@ class InfoFreeMri
   def add_phone_options
     @browser.link(:id,'ui-id-4').click
     sleep(1)
-    @browser.h3(:id,'if-widget-566-6217-header').click
+    @browser.h3(:id,'if-widget-563-6217-header').click
     @browser.checkbox(:name,'checkbox6217').click
     @browser.checkbox(:name,'checkbox6217').fire_event('onclick')
     sleep(1)
-    @browser.h3(:id,'if-widget-566-6269-header').click
+    @browser.h3(:id,'if-widget-563-6269-header').click
     @browser.checkbox(:name,'checkbox6269').click
     @browser.checkbox(:name,'checkbox6269').fire_event('onclick')
     sleep(1)
