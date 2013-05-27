@@ -42,13 +42,13 @@ class InfoFreeMri
     @browser.link(:id,'ui-id-4').click
     sleep(1)
     @browser.h3(:id,'if-widget-563-6217-header').click
-    @browser.checkbox(:name,'checkbox6217').set
+    #@browser.checkbox(:name,'checkbox6217').set
     @browser.checkbox(:name,'checkbox6217').fire_event('onclick')
-    sleep(1)
+    sleep(3)
     @browser.h3(:id,'if-widget-563-6269-header').click
-    @browser.checkbox(:name,'checkbox6269').set
+    #@browser.checkbox(:name,'checkbox6269').set
     @browser.checkbox(:name,'checkbox6269').fire_event('onclick')
-    sleep(1)
+    sleep(3)
     puts "phone number options selected"
   end
 
@@ -57,7 +57,9 @@ class InfoFreeMri
   end
   def click_final_selection
     sleep(1)
-    @browser.button(:text,"I'm Done, View Sales Leads").fire_event('onclick')
+    b = @browser.buttons(:class,"next")
+    b.last.click
+    sleep(1)
     puts "Final Lead Page"
   end
 
@@ -70,6 +72,7 @@ class InfoFreeMri
       begin
         file_row = []
         page_trs[i].click
+        page_trs[i].fire_event('onclick')
         sleep(1)
         @browser.table(:id,'contactTable').rows.each do |row|
           file_row << row.text
