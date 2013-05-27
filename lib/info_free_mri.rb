@@ -42,11 +42,11 @@ class InfoFreeMri
     @browser.link(:id,'ui-id-4').click
     sleep(1)
     @browser.h3(:id,'if-widget-563-6217-header').click
-    @browser.checkbox(:name,'checkbox6217').click
+    @browser.checkbox(:name,'checkbox6217').set
     @browser.checkbox(:name,'checkbox6217').fire_event('onclick')
     sleep(1)
     @browser.h3(:id,'if-widget-563-6269-header').click
-    @browser.checkbox(:name,'checkbox6269').click
+    @browser.checkbox(:name,'checkbox6269').set
     @browser.checkbox(:name,'checkbox6269').fire_event('onclick')
     sleep(1)
     puts "phone number options selected"
@@ -63,6 +63,7 @@ class InfoFreeMri
 
 
   def get_table_page_data
+    sleep(2)
     page_trs = @browser.table(:class,'display_leads dataTable').rows
     #file_array = []
     (0..24).each do |i|
@@ -141,8 +142,8 @@ class InfoFreeMri
         output_row[:email] = ""
         output_row[:phone] = ("#{arr[0]} #{arr[1]}")
       end
-      output_row[:address1] = row[2] unless(row[2].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
-      output_row[:address2] = row[3] unless(row[3].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
+      output_row[:address1] = row[2] if(!row[2].nil? && !row[2].match(/^Gender|^Age|^Home|^Marital/))
+      output_row[:address2] = row[3] if(!row[3].nil? && !row[3].match(/^Gender|^Age|^Home|^Marital/))
       (2..9).each do |i|
         if row[i]
 
