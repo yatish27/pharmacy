@@ -56,7 +56,8 @@ class InfoFreeMri
     @browser.span(:class,'baseCount').text
   end
   def click_final_selection
-    @browser.button(:text,"I'm Done, View Sales Leads").click
+    sleep(1)
+    @browser.button(:text,"I'm Done, View Sales Leads").fire_event('onclick')
     puts "Final Lead Page"
   end
 
@@ -77,10 +78,10 @@ class InfoFreeMri
             file_row << row.text
           end
         end
-        # file_array << file_row
-        puts file_row[0]
+        puts file_row
         final_row = clean_row(file_row)
         if final_row
+          p final_row
           #c = Contact.create(final_row)
           #puts "contact saved!!!"
         end
@@ -135,13 +136,13 @@ class InfoFreeMri
       arr = row[1].split(' ')
       if arr.count == 3
         output_row[:email] = arr[0]
-        output_row[:phone] = (arr[1] + " " + arr[2])
+        output_row[:phone] = ("#{arr[1]} #{arr[2]}")
       else
         output_row[:email] = ""
-        output_row[:phone] = arr[0]+ " " +arr[1]
+        output_row[:phone] = ("#{arr[0]} #{arr[1]}")
       end
-      output_row[:address1] = row[2] unless row[2].blank?
-      output_row[:address2] = row[3] unless row[3].blank?
+      output_row[:address1] = row[2] unless(row[2].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
+      output_row[:address2] = row[3] unless row[3].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
       (2..9).each do |i|
         if row[i]
 
