@@ -4,7 +4,7 @@ class InfoFreeWorker
 
   def perform(id)
     zip = Zipcode.find id
-    obj = InfoFree.new([zip.code])
+    obj = InfoFreeMri.new([zip.code])
     obj.run
     zip.status = true
     zip.save

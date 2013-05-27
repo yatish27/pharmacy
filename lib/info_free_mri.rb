@@ -83,9 +83,8 @@ class InfoFreeMri
         end
         final_row = clean_row(file_row)
         if final_row
-          p final_row
-          #c = Contact.create(final_row)
-          #puts "contact saved!!!"
+          c = Contact.create(final_row)
+          puts "contact saved!!!"
         end
       rescue=>e
         p e

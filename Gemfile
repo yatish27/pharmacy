@@ -5,8 +5,8 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'activerecord-jdbcmysql-adapter'
-gem 'jruby-openssl'
+gem 'mysql2'
+#gem 'jruby-openssl'
 gem 'json'
 gem 'sinatra','1.3.4', require: false
 gem 'slim','1.3.6'
@@ -14,7 +14,7 @@ gem 'sidekiq'
 gem 'activeadmin'
 #gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
-gem 'celerity'
+#gem 'celerity'
 
 
 group :assets do
