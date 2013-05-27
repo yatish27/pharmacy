@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 #gem 'jruby-openssl'
 gem 'headless'
+gem 'watir-webdriver'
 gem 'json'
 gem 'sinatra','1.3.4', require: false
 gem 'slim','1.3.6'
