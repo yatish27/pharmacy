@@ -37,12 +37,15 @@ class InfoFreeMri
     @browser.li(:id, 'search-alias-5932-selector-0').click
     puts "#{zip} added"
   end
+
   def add_phone_options
     @browser.link(:id,'ui-id-4').click
     sleep(1)
+    @browser.h3(:id,'if-widget-566-6217-header').click
     @browser.checkbox(:name,'checkbox6217').click
     @browser.checkbox(:name,'checkbox6217').fire_event('onclick')
     sleep(1)
+    @browser.h3(:id,'if-widget-566-6269-header').click
     @browser.checkbox(:name,'checkbox6269').click
     @browser.checkbox(:name,'checkbox6269').fire_event('onclick')
     sleep(1)
