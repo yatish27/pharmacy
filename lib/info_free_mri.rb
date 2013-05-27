@@ -142,7 +142,7 @@ class InfoFreeMri
         output_row[:phone] = ("#{arr[0]} #{arr[1]}")
       end
       output_row[:address1] = row[2] unless(row[2].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
-      output_row[:address2] = row[3] unless row[3].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
+      output_row[:address2] = row[3] unless(row[3].blank? && row[2].match(/^Gender|^Age|^Home|^Marital/))
       (2..9).each do |i|
         if row[i]
 
