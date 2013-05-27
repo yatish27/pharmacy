@@ -28,6 +28,8 @@ class InfoFreeMri
 
   def add_zipcodes(zip)
     sleep(10)
+    @browser.h3(:id,'if-widget-566-5932-header').click
+    sleep(1)
     @browser.text_field(:name,'search-alias-5932').set zip
     sleep(1)
     @browser.text_field(:name,'search-alias-5932').fire_event('onkeyup')

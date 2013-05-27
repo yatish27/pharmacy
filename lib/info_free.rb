@@ -82,6 +82,7 @@ class InfoFree
           c = Contact.create(final_row)
           puts "contact saved!!!"
         end
+
       rescue=>e
         p e
       end
@@ -121,6 +122,7 @@ class InfoFree
     add_phone_options
     click_final_selection
     iterate_pages
+     @browser.close
   end
 
   def clean_row(row)
