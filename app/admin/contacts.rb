@@ -28,7 +28,7 @@ ActiveAdmin.register Contact do
     column :living_duration
   end
 
-  filter :age_range, :as => :select, :collection => Contact.select("DISTINCT age_range").map(&:age_range).compact.collect {|o| [o, o]}
-  filter :zip, :as => :select, :collection => Contact.select("DISTINCT zip").map(&:zip).compact.collect {|o| [o , o]}
-  filter :home_owner, :as => :select, :collection => Contact.select("DISTINCT home_owner").map(&:home_owner).compact.collect {|o| [o, o]}
+  filter :age_range, :as => :select, :collection => proc { Contact.select("DISTINCT age_range").map(&:age_range).compact.collect {|o| [o, o]}}
+  filter :zip, :as => :select, :collection => proc{ Contact.select("DISTINCT zip").map(&:zip).compact.collect {|o| [o , o]}}
+  filter :home_owner, :as => :select, :collection => proc { Contact.select("DISTINCT home_owner").map(&:home_owner).compact.collect {|o| [o, o]}}
 end
