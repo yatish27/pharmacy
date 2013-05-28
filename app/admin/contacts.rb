@@ -31,5 +31,5 @@ ActiveAdmin.register Contact do
 
   filter :age_range, :as => :select, :collection => proc { Contact.select("DISTINCT age_range").map(&:age_range).compact.collect {|o| [o, o]}}
   filter :zip, :as => :select, :collection => proc{ Contact.select("DISTINCT zip").map(&:zip).compact.collect {|o| [o , o]}}
-  filter :home_owner, :as => :select, :collection => proc { Contact.select("DISTINCT home_owner").map(&:home_owner).compact.collect {|o| [o, o]}}
+  filter :gender,:as => :select, :collection => Contact.select("DISTINCT gender").map(&:gender).compact.collect {|o| [o , o]}
 end
