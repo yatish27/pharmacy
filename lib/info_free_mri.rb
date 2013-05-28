@@ -5,19 +5,16 @@ class InfoFreeMri
 
   attr_accessor :browser
 
-  USERNAME = 'vincentchhabra@gmail.com'
-  PASSWORD = 'Giovanni99'
-  conf = YAML.load_file("#{Rails.root.to_s}/config/infofree.yml")
-
   def initialize(zip_codes)
     @zip_codes = zip_codes
   end
 
   def login
+    conf = YAML.load_file("#{Rails.root.to_s}/config/infofree.yml")
     @browser = Watir::Browser.new :firefox
     @browser.goto('https://new.infofree.com/login')
-    @browser.text_field(:name,'username').value = USERNAME
-    @browser.text_field(:name,'password').value = PASSWORD
+    @browser.text_field(:name,'username').value = conf["USERNAME"]
+    @browser.text_field(:name,'password').value = conf["PASSWORD"]
     @browser.button(:id,'login_submit').click
     puts "Successfully Login"
   end

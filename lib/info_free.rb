@@ -2,8 +2,7 @@
 
 #   #attr_accessor :browser
 
-#   USERNAME = 'vincentchhabra@gmail.com'
-#   PASSWORD = 'Giovanni99'
+#
 
 #   def initialize(zip_codes)
 #     @zip_codes = zip_codes
