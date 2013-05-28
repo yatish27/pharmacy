@@ -7,6 +7,7 @@ class InfoFreeMri
 
   USERNAME = 'vincentchhabra@gmail.com'
   PASSWORD = 'Giovanni99'
+  conf = YAML.load_file("#{Rails.root.to_s}/config/infofree.yml")
 
   def initialize(zip_codes)
     @zip_codes = zip_codes

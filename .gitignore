@@ -15,6 +15,7 @@ dump.rdb
 Gemfile.lock
 config/torquebox.rb
 config/torquebox.yml
+config/infofree.yml
 .directory
 .rvmrc
 .ruby-version
