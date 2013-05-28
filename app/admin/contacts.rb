@@ -21,6 +21,7 @@ ActiveAdmin.register Contact do
     column :city
     column :state
     column :zip
+    column :gender
     column :age_range
     column :maritial_status
     column :home_owner
