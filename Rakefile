@@ -5,3 +5,16 @@
 require File.expand_path('../config/application', __FILE__)
 
 Pharmacy::Application.load_tasks
+
+
+task :upload_zipcodes => :environment do
+  CSV.foreach("#{Rails.root}/zip-codes-database-usa-infofree.csv") do |row|
+    begin
+      code = row[0]
+      z = Zipcode.find_by_code(code)
+    rescue=>e
+      z = Zipcode.create(:code => code)
+      InfoFreeWorker.perform_async(z.id)
+    end
+  end
+end
