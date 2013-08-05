@@ -47,20 +47,22 @@ ActiveRecord::Schema.define(:version => 20130519105952) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "contacts", :force => true do |t|
-    t.string "name"
-    t.string "phone"
-    t.string "email"
-    t.string "address1"
-    t.string "address2"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "gender"
-    t.string "age_range"
-    t.string "home_owner"
-    t.string "maritial_status"
-    t.string "house_cost"
-    t.string "living_duration"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "gender"
+    t.string   "age_range"
+    t.string   "home_owner"
+    t.string   "maritial_status"
+    t.string   "house_cost"
+    t.string   "living_duration"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "zipcodes", :force => true do |t|
