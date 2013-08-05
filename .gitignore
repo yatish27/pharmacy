@@ -23,6 +23,5 @@ config/infofree.yml
 /doc/*.sh
 /db/structure.sql
 /config/initializers/email_settings.rb
-/app/assets/
 /spec/helpers
 /config/env_variables.rb
