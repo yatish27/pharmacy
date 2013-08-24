@@ -30,14 +30,14 @@ group :assets do
 end
 
 
-group :test                , :development do
-  # gem 'rspec-rails'      , '~> 2.0'
-  # gem 'rb-inotify'       , :require => false
-  # gem 'rb-fsevent'       , :require => false
-  # gem 'factory_girl_rails'
-  # #gem "better_errors"
-  # gem "binding_of_caller"
-  # gem 'faker'
-  # gem "shoulda-matchers" , "1.3.0"
+group :test, :development do
+   gem 'rspec-rails'      , '~> 2.0'
+   gem 'annotate'
+   gem 'pry-rails'
+   gem 'factory_girl_rails'
+   gem "better_errors"
+   gem "binding_of_caller"
+   gem 'faker'
+   gem "shoulda-matchers" , "1.3.0"
 end
 
