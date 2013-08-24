@@ -81,7 +81,7 @@ class InfoFreeMri
         end
         final_row = clean_row(file_row)
         if final_row
-          c = Contact.create(final_row)
+          Contact.create(final_row)
           puts "contact saved!!!"
         end
       rescue=>e
@@ -144,7 +144,6 @@ class InfoFreeMri
       output_row[:address2] = row[3] if(!row[3].nil? && !row[3].match(/^Gender|^Age|^Home|^Marital/))
       (2..9).each do |i|
         if row[i]
-
           case
           when row[i].match(/^Gender/)
             output_row[:gender] = row[i].gsub(/Gender/,"").strip
