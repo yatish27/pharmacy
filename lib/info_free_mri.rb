@@ -42,9 +42,9 @@ class InfoFreeMri
     @browser.h3(:id,'if-widget-563-6217-header').click
     @browser.checkbox(:name,'checkbox6217').fire_event('onclick')
     sleep(3)
-    @browser.h3(:id,'if-widget-563-6269-header').click
-    @browser.checkbox(:name,'checkbox6269').fire_event('onclick')
-    sleep(3)
+    #@browser.h3(:id,'if-widget-563-6269-header').click
+    #@browser.checkbox(:name,'checkbox6269').fire_event('onclick')
+    #sleep(3)
     puts "phone number options selected"
   end
 
@@ -81,8 +81,9 @@ class InfoFreeMri
         end
         final_row = clean_row(file_row)
         if final_row
-          Contact.create(final_row)
-          puts "contact saved!!!"
+          c = Contact.create(final_row)
+          puts "#{c.name}"
+          puts 'contact saved!!!'
         end
       rescue => e
         p e
@@ -96,7 +97,7 @@ class InfoFreeMri
     puts "Total Count of records #{total_count}"
     (total_count/25.0).floor.times do |i|
       begin
-        @browser.span(:text,"Next").click
+        @browser.span(:text,'Next').click
         sleep(1.5)
         puts "====================================#Crawling Page#{i}"
         get_table_page_data
