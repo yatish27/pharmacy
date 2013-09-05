@@ -7,9 +7,9 @@ class Contact < ActiveRecord::Base
   def split_address2
     if self.address2
       addr = self.address2.split(' ')
-      self.zip = addr[-1]
+      self.zip   = addr[-1]
       self.state = addr[-2]
-      self.city = addr[0..-3].join(' ')
+      self.city  = addr[0..-3].join(' ')
     end
   end
 

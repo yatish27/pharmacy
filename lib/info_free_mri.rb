@@ -70,7 +70,7 @@ class InfoFreeMri
         file_row = []
         page_trs[i].click
         page_trs[i].fire_event('onclick')
-        sleep(1)
+        sleep(1.5)
         @browser.table(:id,'contactTable').rows.each do |row|
           file_row << row.text
         end
@@ -84,7 +84,7 @@ class InfoFreeMri
           Contact.create(final_row)
           puts "contact saved!!!"
         end
-      rescue=>e
+      rescue => e
         p e
       end
     end
@@ -100,7 +100,7 @@ class InfoFreeMri
         sleep(1.5)
         puts "====================================#Crawling Page#{i}"
         get_table_page_data
-      rescue=>e
+      rescue => e
         p e
       end
     end
@@ -144,6 +144,7 @@ class InfoFreeMri
       output_row[:address2] = row[3] if(!row[3].nil? && !row[3].match(/^Gender|^Age|^Home|^Marital/))
       (2..9).each do |i|
         if row[i]
+
           case
           when row[i].match(/^Gender/)
             output_row[:gender] = row[i].gsub(/Gender/,"").strip
@@ -161,7 +162,7 @@ class InfoFreeMri
         end
       end
       return output_row
-    rescue=>e
+    rescue => e
       puts e
     end
 
