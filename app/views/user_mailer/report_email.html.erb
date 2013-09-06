@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>Report</p>
+<%@report.each do |zip,count|%>
+    <p><%="#{zip}:#{count}"%></p>
+<%end%>
+<p>
+</p>
+</body>
+</html>

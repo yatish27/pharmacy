@@ -6,14 +6,13 @@ require File.expand_path('../config/application', __FILE__)
 
 Pharmacy::Application.load_tasks
 
-
+require 'csv'
 task :upload_zipcodes => :environment do
-  CSV.foreach("#{Rails.root}/infofree_zip_codes_to_scrape.csv") do |row|
-    begin
-      code = row[0]
-      z = Zipcode.find_by_code(code)
-    rescue=>e
-      z = Zipcode.create(:code => code)
+  CSV.foreach("#{Rails.root}/lib/infofree_zip_codes_to_scrape.csv") do |row|
+    code = row[0]
+    z = Zipcode.find_by_code(code)
+    unless z
+      z = Zipcode.create(:code => code, :status=> false)
       InfoFreeWorker.perform_async(z.id)
     end
   end
