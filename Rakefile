@@ -8,7 +8,7 @@ Pharmacy::Application.load_tasks
 
 
 task :upload_zipcodes => :environment do
-  CSV.foreach("#{Rails.root}/zip-codes-database-usa-infofree.csv") do |row|
+  CSV.foreach("#{Rails.root}/infofree_zip_codes_to_scrape.csv") do |row|
     begin
       code = row[0]
       z = Zipcode.find_by_code(code)
