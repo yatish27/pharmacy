@@ -22,6 +22,6 @@ config/infofree.yml
 .ruby-gemset
 /doc/*.sh
 /db/structure.sql
-/config/initializers/email_settings.rb
+/config/initializers/setup_mail.rb
 /spec/helpers
 /config/env_variables.rb
