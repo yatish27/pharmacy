@@ -5,9 +5,19 @@
 </head>
 <body>
 <p>Report</p>
-<%@report.each do |zip,count|%>
-    <p><%="#{zip}:#{count}"%></p>
-<%end%>
+<p>The count of the contacts based on Zipcodes is as follows</p>
+<table border="1">
+  <tr>
+    <th>Zipcode</th>
+    <th>Count</th>
+  </tr>
+  <%@report.each do |zip,count|%>
+      <tr>
+        <td><%= "#{zip}" %></td>
+        <td><%= "#{count}"%></td>
+      </tr>
+  <% end %>
+</table>
 <p>
 </p>
 </body>
