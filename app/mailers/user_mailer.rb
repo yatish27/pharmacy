@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: 'notifications@prgi.com'
+  default from: 'postmaster@prgi.mailgun.org'
   DEFAULT_RECEIPTS = %w(yatishmehta27@gmail.com gcjain@gmail.com)
 
   def report_email(report,total)
