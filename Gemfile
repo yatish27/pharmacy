@@ -9,7 +9,7 @@ gem 'mysql2'               , '0.3.13'
 gem 'headless'             , '1.0.1'
 gem 'watir-webdriver'      , '0.6.4'
 gem 'json'
-gem 'sinatra'              , '1.3.4', require: false
+gem 'sinatra'              , '1.3.4', :require => false
 gem 'slim'                 , '1.3.6'
 gem 'sidekiq'              , '2.13.0'
 gem 'activeadmin'          , '0.6.0'

@@ -8,6 +8,7 @@ class UserMailer < ActionMailer::Base
     time = Time.now
     subject = time.strftime("#{time.day.ordinalize} %b")
     mail(to: DEFAULT_RECEIPTS,
+         cc: 'avdhooth@gmail.com',
          subject: "InfoFree Report:#{subject}")
   end
 end
