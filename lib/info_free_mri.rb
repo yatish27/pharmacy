@@ -129,7 +129,6 @@ class InfoFreeMri
   end
 
   def clean_row(row)
-    #CSV.foreach(path) do |row|
     begin
       output_row = Hash.new
       output_row[:name] = row[0]
@@ -145,7 +144,6 @@ class InfoFreeMri
       output_row[:address2] = row[3] if(!row[3].nil? && !row[3].match(/^Gender|^Age|^Home|^Marital/))
       (2..9).each do |i|
         if row[i]
-
           case
           when row[i].match(/^Gender/)
             output_row[:gender] = row[i].gsub(/Gender/,"").strip
